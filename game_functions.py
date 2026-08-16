@@ -11,8 +11,10 @@ def check_events(ship):
             if event.key == pygame.K_RIGHT:
                 # move the ship to the right
                 ship.moving_right = True
+                ship.moving_left = False
             elif event.key == pygame.K_LEFT:
                     ship.moving_left = True
+                    ship.moving_right = False
                 
         
         elif event.type == pygame.KEYUP:
