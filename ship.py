@@ -32,7 +32,7 @@ class Ship():
         # update the ship's cenetr value, not the rect.
         if keys [pygame.K_RIGHT] and self.rect.right < self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
-        if keys[pygame.K_LEFT] and self.rect.left < self.screen_rect.left:
+        if keys[pygame.K_LEFT] and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
             
         # update rect object from self.center.
