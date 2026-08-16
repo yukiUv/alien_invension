@@ -27,10 +27,12 @@ class Ship():
         
     def update(self):
         """ update the ship's postion based on the movement flag."""
+        keys = pygame.key.get_pressed()
+        
         # update the ship's cenetr value, not the rect.
-        if self.moving_right:
+        if keys [pygame.K_RIGHT] and self.rect.right < self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
-        if self.moving_left:
+        if keys[pygame.K_LEFT] and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
             
         # update rect object from self.center.
