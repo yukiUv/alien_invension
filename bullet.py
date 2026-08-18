@@ -6,7 +6,7 @@ class Bullet(Sprite):
     
     def __init__(self,ai_settings,screen,ship):
         """creste a bullet object at the ship's current position."""
-        super.__init__(self,Bullet)
+        super().__init__()
         self.screen = screen
         
         # Create a bullet rect at (0,0) and then set correct position.
