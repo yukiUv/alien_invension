@@ -24,8 +24,6 @@ def run_game():
     gf.create_fleet(ai_settings,screen,aliens)
     
     
-    
-    
     #Start the main loop for the game. 
     while True:
         gf.check_events(ai_settings,screen,ship,bullets)
