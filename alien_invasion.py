@@ -31,6 +31,7 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         gf.update_bullets(bullets)
+        gf.update_aliens(ai_settings,aliens)
         # Draw everything ONCE per frame — update_screen handles
         # screen.fill, bullets, ship.blitme(), aliens.draw(), and flip().
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
