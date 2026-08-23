@@ -23,7 +23,9 @@ def create_alien(ai_settings,screen,aliens,alien_number,row_number):
     alien_width = alien.rect.width
     alien_x = alien_width + 2 * alien_width * alien_number
     alien.rect.x = alien_x
+    alien.x = float(alien.rect.x)
     alien.rect.y = alien.rect.height + 2* alien.rect.height * row_number
+    
     aliens.add(alien)
     
 def create_fleet(ai_settings,screen,ship,aliens):
@@ -89,15 +91,24 @@ def update_screen(ai_settings,screen,ship,aliens,bullets):
     pygame.display.flip()   
         
 
-def update_bullets(bullets):
+def update_bullets(ai_Settings,screen,ship,aliens,bullets):
     """ Update position of bullets and get rid of old bullets."""
-    #Update bullet positions.
+    #Update position of bullets and get rid of old bullets.
     bullets.update()
     
     # get rid of bullets that have disappeared.
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+    
+    #check for any bullets that have hit aliens.
+    #if so, get rid of the bullet and the alien.
+    collisions = pygame.sprite.groupcollide(bullets,aliens,True,True)
+    
+    if len(aliens) == 0:
+        # destroy exsiting bullets and create new fleet.
+        bullets.empty()
+        create_fleet(ai_Settings,screen,ship,aliens)
 
 def check_fleet_edges(ai_settings,aliens):
     """resond appropriately if any aliens have reached an edge."""
