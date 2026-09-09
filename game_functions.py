@@ -66,7 +66,7 @@ def check_keyup_events(event,ship):
     elif event.key ==pygame.K_LEFT:
         ship.moving_left = False
         
-def check_events(ai_settings,screen,stats,play_button,ship,aliens,bullets):
+def check_events(ai_settings,screen,stats,sb,play_button,ship,aliens,bullets):
     """ Respond to keypreseses and mouse events"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -78,9 +78,9 @@ def check_events(ai_settings,screen,stats,play_button,ship,aliens,bullets):
             check_keyup_events(event,ship)
         elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x,mouse_y = pygame.mouse.get_pos()
-            check_play_button(ai_settings,screen,stats,play_button,ship,aliens,bullets,mouse_x,mouse_y)
+            check_play_button(ai_settings,screen,stats,sb,play_button,ship,aliens,bullets,mouse_x,mouse_y)
 
-def check_play_button(ai_settings,screen,stats,play_button,ship,aliens,bullets,mouse_x,mouse_y):
+def check_play_button(ai_settings,screen,stats,sb,play_button,ship,aliens,bullets,mouse_x,mouse_y):
     """Start a new game when the player clicks play."""
     button_clicked = play_button.rect.collidepoint(mouse_x,mouse_y)
     if button_clicked and not stats.game_active:
@@ -88,9 +88,15 @@ def check_play_button(ai_settings,screen,stats,play_button,ship,aliens,bullets,m
         ai_settings.initialize_dynamic_settings()
         # hide the mouse cursor.
         pygame.mouse.set_visible(False)
+        
         # reset the game statistics.
         stats.reset_stats()
         stats.game_active = True
+        
+        # reset the scoreboard img
+        sb.prep_score()
+        sb.prep_high_score()
+        sb.prep_level()
         
         # empty the list of aliens and bullets
         aliens.empty()
@@ -151,8 +157,14 @@ def check_bullets_alien_collisions(ai_settings, screen, stats, sb,ship, aliens, 
         check_high_score(stats, sb)
 
     if len(aliens) == 0:
+        # if the entire fleet is destroyed , start a new level.
         bullets.empty()
         ai_settings.increase_speed()
+        
+        # level up 
+        stats.level += 1
+        sb.prep_level()
+        
         create_fleet(ai_settings, screen, ship, aliens)
 
 def check_high_score(stats, sb):
