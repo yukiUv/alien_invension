@@ -58,6 +58,7 @@ def fire_bullet(ai_settings,screen,ship,bullets):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings,screen,ship)
         bullets.add(new_bullet)
+        ai_settings.fire_sound.play()
 
 def check_keyup_events(event,ship):
     """ respond to key releases"""
@@ -110,7 +111,8 @@ def check_play_button(ai_settings,screen,stats,sb,play_button,ship,aliens,bullet
 def update_screen(ai_settings,screen,stats,sb,ship,aliens,bullets,play_button):
     """Update images on the screen and flip to the new screen"""
     # redraw the screen during each pass through the loop.
-    screen.fill(ai_settings.bg_color)
+    # draw the bg image instead of a flat fill
+    screen.blit(ai_settings.bg_image, (0,0))
      # Redraw all bullets behind ship and aliens.
     for bullet in bullets.sprites():
         bullet.draw_bullet()
@@ -148,6 +150,7 @@ def check_bullets_alien_collisions(ai_settings, screen, stats, sb,ship, aliens, 
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True )
 
     if collisions:
+        ai_settings.explosion_sound.play()
         for aliens_hit in collisions.values():
             stats.score += ai_settings.alien_points * len(aliens_hit)
 
