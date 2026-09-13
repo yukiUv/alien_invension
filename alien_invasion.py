@@ -17,6 +17,27 @@ def run_game():
         (ai_settings.screen_width,ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
     
+    # load the bg image.
+    
+    ai_settings.bg_image = pygame.image.load('image/background.bmp')
+    ai_settings.bg_image = pygame.transform.scale(
+        ai_settings.bg_image , (ai_settings.screen_width, ai_settings.screen_height)
+    )
+    
+    """ Set up the sound system the same way : load everything once here
+    and store it on ai_settings so fire_bullet() and the collision
+    code can just call .play() on it.
+    """
+    
+    ai_settings.fire_sound = pygame.mixer.Sound('sound/fire.wav')
+    ai_settings.fire_sound.set_volume(0.4)
+    ai_settings.explosion_sound = pygame.mixer.Sound('sound/explosion.wav')
+    ai_settings.explosion_sound.set_volume(0.5)
+    
+    pygame.mixer.music.load('sound/background_music.wav')
+    pygame.mixer.music.set_volume(0.3)
+    pygame.mixer.music.play(-1) # -1 loops the track forever1
+    
     #make the play button
     play_button = Button(ai_settings,screen,"Play")
     #create clock object
