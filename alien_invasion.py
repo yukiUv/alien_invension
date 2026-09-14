@@ -9,6 +9,8 @@ from game_stats import GameStats
 from button import Button    
 from scoreboard import Scoreboard
 
+
+
 def run_game():
     #Initialize pygame, settings and  screen object.
     pygame.init()
