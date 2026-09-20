@@ -215,7 +215,7 @@ Provides the interactive **Play** button used to start or restart the game.
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology                   | Purpose                                     |
 | ---------------------------- | ------------------------------------------- |
@@ -435,7 +435,7 @@ State-Based Gameplay — Player lives, score, level, and active game state are m
 
 This architecture provides a clean foundation for extending the project with additional enemies, weapons, power-ups, levels, menus, and other gameplay systems.
 
-## 🧠 Learning Outcomes
+## Learning Outcomes
 
 This project helped me gain practical experience with:
 
@@ -457,7 +457,7 @@ More importantly, it helped me understand how individual programming concepts ca
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 Potential future improvements include:
 
@@ -478,7 +478,7 @@ Potential future improvements include:
 
 ---
 
-## 📚 Inspiration
+## Inspiration
 
 This project was inspired by the **Alien Invasion** project from:
 
@@ -488,7 +488,7 @@ The implementation was developed and extended as a practical programming project
 
 ---
 
-## 👨‍💻 Developer
+##  Developer
 
 **Chandima Udugama Withanage**
 
@@ -505,7 +505,7 @@ Interested in:
 
 ---
 
-## 📄 License
+##  License
 
 This project is intended primarily for educational and portfolio purposes.
 
@@ -513,8 +513,8 @@ If you reuse or modify this project, please provide appropriate attribution.
 
 ---
 
-## ⭐ Support
 
-If you find this project interesting, consider giving the repository a ⭐ on GitHub.
 
-**Thank you for checking out Alien Invasion! 🚀👽**
+
+
+**Thank you for checking out Alien Invasion! **
