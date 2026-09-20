@@ -378,7 +378,8 @@ pip freeze > requirements.txt
 
 <img width="1512" height="942" alt="image" src="https://github.com/user-attachments/assets/c4417c9b-b2cd-4f65-957f-c6fad2ff7077" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/19ee043a-b796-4a7b-947a-93e611c4b433" />
+<img width="1482" height="1045" alt="Alian" src="https://github.com/user-attachments/assets/6143d1b4-1bb5-467d-931b-e94e4b612b50" />
+
 
 
 ### Project Architecture
