@@ -376,7 +376,8 @@ pip freeze > requirements.txt
 
 ### Higher-Level Gameplay
 
-<img width="1492" height="941" alt="image" src="https://github.com/user-attachments/assets/f390262e-f61b-47ed-9d67-8c7d78faafc8" />
+<img width="1512" height="942" alt="image" src="https://github.com/user-attachments/assets/c4417c9b-b2cd-4f65-957f-c6fad2ff7077" />
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/19ee043a-b796-4a7b-947a-93e611c4b433" />
 
 
